@@ -31,3 +31,6 @@
 [submodule "osx/powerline-fonts"]
 	path = osx/powerline-fonts
 	url = https://github.com/powerline/fonts.git
+[submodule ".vim/bundle/vim-latex"]
+	path = .vim/bundle/vim-latex
+	url = https://github.com/lervag/vim-latex.git
