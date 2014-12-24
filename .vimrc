@@ -12,8 +12,8 @@ filetype off
 " Set syntax highlighting options.
 set t_Co=256
 syntax on
-colorscheme solarized
-set background=light
+colorscheme bubblegum
+set background=dark
 call togglebg#map("")
 
 " GitGutter colors
@@ -33,9 +33,9 @@ let mapleader=","
 imap jj <ESC>
 
 " Local dirs
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undodir=~/.vim/undo
+set backupdir=~/.vimbackups
+set directory=~/.vimswaps
+set undodir=~/.vimundo
 
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
