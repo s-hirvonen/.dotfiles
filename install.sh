@@ -16,7 +16,7 @@ brew install realpath
 
 
 function doIt() {
-	for SOURCE in .oh-my-zsh .zshrc .vimrc .vim
+	for SOURCE in .oh-my-zsh .zshrc .vimrc .vim .tmux.conf
 	do
 		ln -s "$(realpath $SOURCE)" ~
 	done
