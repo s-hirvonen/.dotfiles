@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/bubblegum"]
 	path = .vim/bundle/bubblegum
 	url = https://github.com/baskerville/bubblegum.git
+[submodule "osx/powerline-fonts"]
+	path = osx/powerline-fonts
+	url = https://github.com/powerline/fonts.git
