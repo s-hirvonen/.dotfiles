@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install submodules
+git submodule init
+git submodule update
+
 # Check for Homebrew install,
 # install if not found
 if test ! $(which brew); then
