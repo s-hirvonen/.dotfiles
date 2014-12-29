@@ -25,6 +25,9 @@ function doIt() {
 		ln -hfis "$(realpath $SOURCE)" ~
 	done
 	unset SOURCE
+
+        # create directory for VIM swap, history, undo etc.
+        mkdir -p ~/.vimtmp
 }
 
 doIt

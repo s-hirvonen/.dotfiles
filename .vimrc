@@ -33,9 +33,9 @@ let mapleader=","
 imap jj <ESC>
 
 " Local dirs
-set backupdir=~/.vimbackups
-set directory=~/.vimswaps
-set undodir=~/.vimundo
+set backupdir=~/.vimtmp
+set directory=~/.vimtmp
+set undodir=~/.vimtmp
 
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
