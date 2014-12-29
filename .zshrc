@@ -57,3 +57,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+export POWERLINE_PATH=$(pip show powerline-status | grep Location | awk '{print $2}')
