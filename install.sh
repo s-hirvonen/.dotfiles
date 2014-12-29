@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Install submodules
+git submodule init
+git submodule update
+
 # Check for Homebrew install,
 # install if not found
 if test ! $(which brew); then
@@ -16,14 +20,20 @@ brew install realpath
 
 
 function doIt() {
-	for SOURCE in .oh-my-zsh .zshrc .vimrc .vim
+	for SOURCE in .oh-my-zsh .zshrc .vimrc .vim .tmux.conf .config
 	do
-		ln -s "$(realpath $SOURCE)" ~
+		ln -hfis "$(realpath $SOURCE)" ~
 	done
 	unset SOURCE
+
+        # create directory for VIM swap, history, undo etc.
+        mkdir -p ~/.vimtmp
 }
 
 doIt
+
+# Install Powerline
+sudo pip install git+git://github.com/powerline/powerline
 
 # Change shell to zsh
 chsh -s /bin/zsh
