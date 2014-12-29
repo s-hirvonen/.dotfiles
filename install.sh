@@ -32,6 +32,9 @@ function doIt() {
 
 doIt
 
+# Install Powerline
+sudo pip install git+git://github.com/powerline/powerline
+
 # Change shell to zsh
 chsh -s /bin/zsh
 
