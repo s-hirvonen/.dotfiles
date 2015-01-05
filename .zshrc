@@ -51,8 +51,13 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Add Ruby gems to path
+if which ruby >/dev/null && which gem >/dev/null; then
+   export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
