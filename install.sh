@@ -17,6 +17,7 @@ brew tap iveney/mocha # has realpath
 brew install coreutils
 brew install findutils
 brew install realpath
+brew install python
 
 
 function doIt() {
@@ -33,7 +34,7 @@ function doIt() {
 doIt
 
 # Install Powerline
-sudo pip install git+git://github.com/powerline/powerline
+pip install git+git://github.com/Lokaltog/powerline
 
 # Change shell to zsh
 chsh -s /bin/zsh
