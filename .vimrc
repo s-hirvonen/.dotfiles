@@ -6,9 +6,6 @@ execute pathogen#infect()
 filetype plugin indent on
 
 
-" Enabled later, after Pathogen
-filetype off
-
 " Set syntax highlighting options.
 set t_Co=256
 syntax on
@@ -28,6 +25,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Change mapleader
 let mapleader=","
+let maplocalleader=","
 
 " Exit to normal mode with jj
 imap jj <ESC>
@@ -227,11 +225,9 @@ nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
-" vim-LaTeX
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats = 'pdf'
-let g:Tex_BibtexFlavor = 'biber'
-let g:Tex_CompileRule_bib = 'biber $*'
+" vim-latex
+let g:latex_build_dir='.'
+
 
 " Fugitive
 map <Leader>gst :Gstatus<CR>
