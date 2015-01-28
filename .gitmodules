@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = https://github.com/lervag/vim-latex.git
+[submodule ".vim/bundle/Xdebug"]
+	path = .vim/bundle/Xdebug
+	url = git@github.com:vim-scripts/Xdebug.git
