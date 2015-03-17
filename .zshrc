@@ -63,4 +63,8 @@ fi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export POWERLINE_PATH=$(pip show powerline-status |grep Location |awk '{print $2}')
+export POWERLINE_PATH=$(pip show powerline-status | grep Location | awk '{print $2}')
+
+# rbenv config
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
