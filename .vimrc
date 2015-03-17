@@ -12,8 +12,8 @@ filetype off
 " Set syntax highlighting options.
 set t_Co=256
 syntax on
-colorscheme bubblegum
-set background=dark
+colorscheme solarized
+set background=light
 call togglebg#map("")
 
 " GitGutter colors
