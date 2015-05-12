@@ -235,3 +235,24 @@ map <Leader>gc :Gcommit<CR>
 
 " Emmet
 let g:user_emmet_leader_key='<s-tab>'
+
+" The Silver Searcher
+if executable('ag')
+        " use ag in CtrlP for listing files
+        let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+        let g:ctrlp_use_caching = 0
+
+        " use ag in Unite.vim
+        let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
+        let g:unite_source_grep_command = 'ag'
+        let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'    
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Unite.vim
+nnoremap <space>- :Unite grep:.<cr>
+nnoremap <space>b :Unite -quick-match buffer<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
