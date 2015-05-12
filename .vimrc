@@ -9,8 +9,8 @@ filetype plugin indent on
 " Set syntax highlighting options.
 set t_Co=256
 syntax on
-colorscheme solarized
-set background=light
+colorscheme bubblegum
+set background=dark
 call togglebg#map("")
 
 " GitGutter colors
