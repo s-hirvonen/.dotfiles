@@ -227,6 +227,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " vim-latex
 let g:latex_build_dir='.'
+let g:latex_latexmk_options='-shell-escape -pdf'
 
 
 " Fugitive
