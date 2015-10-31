@@ -9,7 +9,7 @@ filetype plugin indent on
 " Set syntax highlighting options.
 set t_Co=256
 syntax on
-colorscheme bubblegum
+colorscheme bubblegum-256-dark
 set background=dark
 call togglebg#map("")
 
