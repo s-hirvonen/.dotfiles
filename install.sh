@@ -4,21 +4,27 @@
 git submodule init
 git submodule update
 
-# Check for Homebrew install,
-# install if not found
-if test ! $(which brew); then
-	echo "Installing homebrew..."
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [[ "$OSTYPE" == "darwin"* ]]
+then 
+        osx
 fi
 
-# Install dotfile dependencies and other userful things
-brew update
-brew tap iveney/mocha # has realpath
-brew install coreutils
-brew install findutils
-brew install realpath
-brew install python
+function osx() {
+        # Check for Homebrew install,
+        # install if not found
+        if test ! $(which brew); then
+                echo "Installing homebrew..."
+                ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        fi
 
+        # Install dotfile dependencies and other userful things
+        brew update
+        brew tap iveney/mocha # has realpath
+        brew install coreutils
+        brew install findutils
+        brew install realpath
+        brew install python
+}
 
 function doIt() {
 	for SOURCE in .oh-my-zsh .zshrc .vimrc .vim .tmux.conf .config
@@ -40,3 +46,4 @@ pip install git+git://github.com/Lokaltog/powerline
 chsh -s /bin/zsh
 
 unset doIt
+unset osx
