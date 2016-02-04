@@ -226,8 +226,9 @@ nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 map <Leader>n :NERDTreeToggle<CR>
 
 " vim-latex
-let g:latex_build_dir='build'
-let g:vimtex_latexmk_options='-shell-escape -pdf -auxdir=build -outdir=build'
+let g:vimtex_latexmk_build_dir='build'
+let g:vimtex_latexmk_options='-shell-escape -pdf'
+let g:vimtex_view_method='vimtex_viewer_skim'
 
 " Fugitive
 map <Leader>gst :Gstatus<CR>
