@@ -1,20 +1,15 @@
-" Make vim more useful
+" Initialization -------------------------------- {{{1
 set nocompatible
-
-" Pathogen init
 execute pathogen#infect()
 filetype plugin indent on
 
-
-" Set syntax highlighting options.
+" Colors & UI ----------------------------------- {{{1
 set t_Co=256
 syntax on
 colorscheme bubblegum-256-dark
 set background=dark
 call togglebg#map("")
-
-" GitGutter colors
-highlight clear SignColumn
+highlight clear SignColumn " GitGutter colors
 
 " Vim-airline
 let g:airline_powerline_fonts = 1
@@ -23,19 +18,12 @@ set ttimeoutlen=50
 let g:airline#extensions#tabline#enabled = 1
 
 
-" Change mapleader
-let mapleader=","
-let maplocalleader=","
-
-" Exit to normal mode with jj
-imap jj <ESC>
-
 " Local dirs
 set backupdir=~/.vimtmp
 set directory=~/.vimtmp
 set undodir=~/.vimtmp
 
-" Set some junk
+" Set some junk --------------------------------- {{{1
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
 set cursorline " Highlight current line
@@ -44,7 +32,8 @@ set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
-set nofoldenable " Disable code folding
+"set nofoldenable " Disable code folding
+set foldmethod=marker
 set formatoptions=
 set formatoptions+=c " Format comments
 set formatoptions+=r " Continue comments by default
@@ -99,15 +88,21 @@ set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
-" Status Line
-" hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
-" hi User2 guibg=#455354 guifg=#CC4329 ctermbg=238 ctermfg=196 gui=bold           cterm=bold           term=bold
-" set statusline=[%n]\ %1*%<%.99t%*\ %2*%h%w%m%r%*%y[%{&ff}→%{strlen(&fenc)?&fenc:'No\ Encoding'}]%=%-16(\ L%l,C%c\ %)%P
 let g:Powerline_symbols = 'fancy'
+
+" Key bindings ---------------------------------- {{{1
+" Change mapleader
+let mapleader=","
+let maplocalleader=","
+
+imap jj <ESC> " Exit to normal mode with jj
 
 " Speed up viewport scrolling
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" Code folding
+nnoremap <Space><Space> za " Toggle folds with space
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
@@ -141,13 +136,12 @@ map <silent> <leader>qs <Esc>:noh<CR>
 " map <silent> <leader>qs <Esc>:let @/ = ""<CR>
 
 " Remap keys for auto-completion, disable arrow keys
-" I still need these cuz im nub. so nub.
-" inoremap <expr>  <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-" inoremap <expr>  <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-" inoremap <expr>  <Down>     pumvisible() ? "\<C-n>" : "\<NOP>"
-" inoremap <expr>  <Up>       pumvisible() ? "\<C-p>" : "\<NOP>"
-" inoremap <Left>  <NOP>
-" inoremap <Right> <NOP>
+inoremap <expr>  <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr>  <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr>  <Down>     pumvisible() ? "\<C-n>" : "\<NOP>"
+inoremap <expr>  <Up>       pumvisible() ? "\<C-p>" : "\<NOP>"
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
 
 " Paste toggle (,p)
 set pastetoggle=<leader>p
@@ -195,6 +189,8 @@ autocmd BufReadPost *
 set relativenumber " Use relative line numbers. Current line is still in status bar.
 au BufReadPost,BufNewFile * set relativenumber
 
+" File extensions ------------------------------- {{{1
+
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
@@ -213,14 +209,14 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 " ZSH
 au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
+
+" Plugin configuration -------------------------- {{{1
+
 " CtrlP
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_working_path_mode = 2 " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
-
-" RainboDTreeenthesiDTree
-nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
