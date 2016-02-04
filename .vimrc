@@ -212,12 +212,6 @@ au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
 " Plugin configuration -------------------------- {{{1
 
-" CtrlP
-let g:ctrlp_match_window_bottom = 0 " Show at top of window
-let g:ctrlp_working_path_mode = 2 " Smart path mode
-let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
-let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
-
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -229,27 +223,26 @@ let g:vimtex_view_method='vimtex_viewer_skim'
 " Fugitive
 map <Leader>gst :Gstatus<CR>
 map <Leader>gc :Gcommit<CR>
+map <Leader>gd :Gdiff<CR>
 
 " Emmet
 let g:user_emmet_leader_key='<s-tab>'
 
-" The Silver Searcher
-if executable('ag')
-        " use ag in CtrlP for listing files
-        let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-        let g:ctrlp_use_caching = 0
+" Unite.vim
+nnoremap <C-g> :Unite grep:.<cr>
+nnoremap <C-b> :Unite -quick-match buffer<cr>
+nnoremap <C-p> :Unite file_rec/async<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1,
+\   'winheight': 10,
+\   'direction': 'botright',
+\ })
+
+if executable('ag')
         " use ag in Unite.vim
         let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
         let g:unite_source_grep_command = 'ag'
         let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'    
 endif
-
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" Unite.vim
-nnoremap <space>- :Unite grep:.<cr>
-nnoremap <space>b :Unite -quick-match buffer<cr>
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
