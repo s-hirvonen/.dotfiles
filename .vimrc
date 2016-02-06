@@ -154,8 +154,8 @@ let g:NERDCustomDelimiters = { 'racket': { 'left': ';', 'leftAlt': '#|', 'rightA
 
 " Buffer navigation (,,) (,]) (,[) (,ls)
 map <Leader>, <C-^>
-" :map <Leader>] :bnext<CR>
-" :map <Leader>[ :bprev<CR>
+map <Leader>] :bnext<CR>
+map <Leader>[ :bprev<CR>
 map <Leader>ls :buffers<CR>
 
 " Close Quickfix window (,qq)
@@ -218,7 +218,7 @@ map <Leader>n :NERDTreeToggle<CR>
 " vim-latex
 let g:vimtex_latexmk_build_dir='build'
 let g:vimtex_latexmk_options='-shell-escape -pdf'
-let g:vimtex_view_method='vimtex_viewer_skim'
+let g:vimtex_view_method='general'
 
 " Fugitive
 map <Leader>gst :Gstatus<CR>
@@ -239,6 +239,8 @@ call unite#custom#profile('default', 'context', {
 \   'winheight': 10,
 \   'direction': 'botright',
 \ })
+
+call unite#custom#source('buffer,file,file_rec,file_rec/async', 'sorters', 'sorter_selecta')
 
 if executable('ag')
         " use ag in Unite.vim

@@ -60,8 +60,8 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+export LANG=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
 
 export POWERLINE_PATH=$(pip show powerline-status | grep Location | awk '{print $2}')
 
