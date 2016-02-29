@@ -1,6 +1,17 @@
 {
+        "common": {
+                "log_file": "~/powerlog",
+                "log_level": "DEBUG"
+        },
 	"segments": {
 		"right": [
+			{
+				"function": "powerline.segments.common.players.google_play_apple_script",
+                                "name": "player",
+                                "args": {
+                                        "format": "{state_symbol} {artist} - {title}"
+                                }
+			},
 			{
 				"function": "powerline.segments.common.time.date"
 			},
