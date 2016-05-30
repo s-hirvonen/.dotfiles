@@ -95,7 +95,8 @@ let g:Powerline_symbols = 'fancy'
 let mapleader=","
 let maplocalleader=","
 
-imap jj <ESC> " Exit to normal mode with jj
+" Exit to normal mode with jj
+imap jj <ESC>
 
 " Speed up viewport scrolling
 nnoremap <C-e> 3<C-e>
