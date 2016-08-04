@@ -24,6 +24,7 @@ set directory=~/.vimtmp
 set undodir=~/.vimtmp
 
 " Set some junk --------------------------------- {{{1
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
 set cursorline " Highlight current line
@@ -31,7 +32,6 @@ set diffopt=filler " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
-set expandtab " Expand tabs to spaces
 "set nofoldenable " Disable code folding
 set foldmethod=marker
 set formatoptions=
@@ -71,7 +71,6 @@ set showtabline=2 " Always show tab bar.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
-set softtabstop=2 " Tab key results in 2 spaces
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
