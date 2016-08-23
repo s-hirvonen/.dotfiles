@@ -88,6 +88,10 @@ set wildmode=list:longest " Complete only until point of ambiguity.
 set winminheight=0 "Allow splits to be reduced to a single line.
 set wrapscan " Searches wrap around end of file
 
+" Word wrap, don't wrap in the middle of a word
+set wrap
+set lbr
+
 let g:Powerline_symbols = 'fancy'
 
 " Key bindings ---------------------------------- {{{1
@@ -248,3 +252,6 @@ if executable('ag')
         let g:unite_source_grep_command = 'ag'
         let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'    
 endif
+
+" Vimchant: Finnish spell checking
+let g:vimchant_spellcheck_lang = 'fi'
