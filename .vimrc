@@ -1,6 +1,5 @@
 " Initialization -------------------------------- {{{1
 set nocompatible
-execute pathogen#infect()
 filetype plugin indent on
 
 " Colors & UI ----------------------------------- {{{1
