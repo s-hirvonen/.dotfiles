@@ -1,21 +1,33 @@
 " Initialization -------------------------------- {{{1
 set nocompatible
-execute pathogen#infect()
 filetype plugin indent on
+
+call plug#begin('~/.vim/plugged')
+
+" Colorschemes
+Plug 'altercation/vim-colors-solarized'
+
+" Plugins
+Plug 'shougo/Unite.Vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'lervag/vimtex'
+
+call plug#end()
 
 " Colors & UI ----------------------------------- {{{1
 set t_Co=256
 syntax on
-colorscheme bubblegum-256-dark
+colorscheme solarized
 set background=dark
-call togglebg#map("")
-highlight clear SignColumn " GitGutter colors
 
 " Vim-airline
 let g:airline_powerline_fonts = 1
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h16
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 set ttimeoutlen=50
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
 
 
 " Local dirs

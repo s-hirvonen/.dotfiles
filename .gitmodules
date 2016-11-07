@@ -4,6 +4,3 @@
 [submodule "osx/powerline-fonts"]
 	path = osx/powerline-fonts
 	url = https://github.com/powerline/fonts.git
-[submodule ".vim/bundle/Xdebug"]
-	path = .vim/bundle/Xdebug
-	url = git@github.com:vim-scripts/Xdebug.git
