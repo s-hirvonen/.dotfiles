@@ -9,10 +9,10 @@ Plug 'altercation/vim-colors-solarized'
 
 " Plugins
 Plug 'shougo/Unite.Vim'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -22,12 +22,14 @@ syntax on
 colorscheme solarized
 set background=dark
 
-" Vim-airline
-let g:airline_powerline_fonts = 1
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
-set ttimeoutlen=50
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+" powerline
+if system('command -v powerline-daemon') != ''
+    let g:powerline_pycmd="python3"
+    let g:powerline_pyeval="py3eval"
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 
 
 " Local dirs
@@ -109,6 +111,11 @@ let g:Powerline_symbols = 'fancy'
 " Change mapleader
 let mapleader=","
 let maplocalleader=","
+
+" Map command mode colon to ö and ;
+nnoremap ö :
+nnoremap Ö :
+nnoremap ; :
 
 " Exit to normal mode with jj
 imap jj <ESC>
@@ -228,8 +235,17 @@ au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
 " Plugin configuration -------------------------- {{{1
 
-" NERDTree
-map <Leader>n :NERDTreeToggle<CR>
+" NERDTree-like netrw
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4 " 1: new h-split 2: new v-split 3: new tab 4: prev. window
+let g:netrw_altv=1
+let g:netrw_winsize=25
+map <Leader>n :Vexplore<CR>
+augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * :Vexplore
+augroup END
 
 " vim-latex
 let g:vimtex_latexmk_build_dir='build'
