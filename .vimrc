@@ -9,10 +9,12 @@ Plug 'altercation/vim-colors-solarized'
 
 " Plugins
 Plug 'shougo/Unite.Vim'
+Plug 'ujihisa/unite-colorscheme'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 call plug#end()
 
@@ -38,6 +40,7 @@ set directory=~/.vimtmp
 set undodir=~/.vimtmp
 
 " Set some junk --------------------------------- {{{1
+set path+=**
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -242,10 +245,6 @@ let g:netrw_browse_split=4 " 1: new h-split 2: new v-split 3: new tab 4: prev. w
 let g:netrw_altv=1
 let g:netrw_winsize=25
 map <Leader>n :Vexplore<CR>
-augroup ProjectDrawer
-    autocmd!
-    autocmd VimEnter * :Vexplore
-augroup END
 
 " vim-latex
 let g:vimtex_latexmk_build_dir='build'
@@ -268,7 +267,6 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 call unite#custom#profile('default', 'context', {
 \   'start_insert': 1,
-\   'winheight': 10,
 \   'direction': 'botright',
 \ })
 
