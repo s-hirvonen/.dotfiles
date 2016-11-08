@@ -2,19 +2,36 @@
 set nocompatible
 filetype plugin indent on
 
+call plug#begin('~/.vim/plugged')
+
+" Colorschemes
+Plug 'altercation/vim-colors-solarized'
+
+" Plugins
+Plug 'shougo/Unite.Vim'
+Plug 'ujihisa/unite-colorscheme'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'lervag/vimtex'
+Plug 'junegunn/goyo.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+call plug#end()
+
 " Colors & UI ----------------------------------- {{{1
 set t_Co=256
 syntax on
-colorscheme bubblegum-256-dark
+colorscheme solarized
 set background=dark
-call togglebg#map("")
-highlight clear SignColumn " GitGutter colors
 
-" Vim-airline
-let g:airline_powerline_fonts = 1
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h16
-set ttimeoutlen=50
-let g:airline#extensions#tabline#enabled = 1
+" powerline
+if system('command -v powerline-daemon') != ''
+    let g:powerline_pycmd="python3"
+    let g:powerline_pyeval="py3eval"
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 
 
 " Local dirs
@@ -23,6 +40,7 @@ set directory=~/.vimtmp
 set undodir=~/.vimtmp
 
 " Set some junk --------------------------------- {{{1
+set path+=**
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -96,6 +114,11 @@ let g:Powerline_symbols = 'fancy'
 " Change mapleader
 let mapleader=","
 let maplocalleader=","
+
+" Map command mode colon to ö and ;
+nnoremap ö :
+nnoremap Ö :
+nnoremap ; :
 
 " Exit to normal mode with jj
 imap jj <ESC>
@@ -215,8 +238,13 @@ au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
 " Plugin configuration -------------------------- {{{1
 
-" NERDTree
-map <Leader>n :NERDTreeToggle<CR>
+" NERDTree-like netrw
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4 " 1: new h-split 2: new v-split 3: new tab 4: prev. window
+let g:netrw_altv=1
+let g:netrw_winsize=25
+map <Leader>n :Vexplore<CR>
 
 " vim-latex
 let g:vimtex_latexmk_build_dir='build'
@@ -239,7 +267,6 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 call unite#custom#profile('default', 'context', {
 \   'start_insert': 1,
-\   'winheight': 10,
 \   'direction': 'botright',
 \ })
 

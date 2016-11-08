@@ -2,3 +2,5 @@
 .vim/.netrwhist
 .config/configstore
 .config/filezilla
+.vim/plugged
+.config/enchant

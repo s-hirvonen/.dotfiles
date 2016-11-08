@@ -1,51 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/pack/plugin/start/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/editorconfig-vim"]
-	path = .vim/pack/plugin/start/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/pack/plugin/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/pack/plugin/start/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/pack/plugin/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/pack/plugin/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/pack/plugin/start/vim-airline
-	url = https://github.com/bling/vim-airline.git
-[submodule ".vim/bundle/bubblegum"]
-	path = .vim/pack/plugin/start/bubblegum
-	url = https://github.com/baskerville/bubblegum.git
 [submodule "osx/powerline-fonts"]
 	path = osx/powerline-fonts
 	url = https://github.com/powerline/fonts.git
-[submodule ".vim/bundle/vim-latex"]
-	path = .vim/pack/plugin/start/vim-latex
-	url = https://github.com/lervag/vim-latex.git
-[submodule ".vim/bundle/Xdebug"]
-	path = .vim/bundle/Xdebug
-	url = git@github.com:vim-scripts/Xdebug.git
-[submodule ".vim/bundle/vim-mustache-handlebars"]
-	path = .vim/pack/plugin/start/vim-mustache-handlebars
-	url = https://github.com/mustache/vim-mustache-handlebars.git
-[submodule ".vim/bundle/unite.vim"]
-	path = .vim/pack/plugin/start/unite.vim
-	url = https://github.com/Shougo/unite.vim
-[submodule ".vim/bundle/vimproc.vim"]
-	path = .vim/pack/plugin/start/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
-[submodule ".vim/bundle/vim-jade"]
-	path = .vim/pack/plugin/start/vim-jade
-	url = git://github.com/digitaltoad/vim-jade.git
-[submodule ".vim/bundle/Vimchant"]
-	path = .vim/pack/plugin/start/Vimchant
-	url = https://github.com/vim-scripts/Vimchant.git
