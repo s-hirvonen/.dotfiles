@@ -14,6 +14,9 @@
 		"branch": {
 			"before": "🔀 "
 		},
+		"stash": {
+			"before": "📝"
+		},
 		"cwd": {
 			"args": {
 				"ellipsis": "⋯"
@@ -47,20 +50,12 @@
 		"powerline.segments.common.net.hostname": {
 			"before": "🏠 "
 		},
-		"powerline.segments.common.players.now_playing": {
-			"args": {
-				"state_symbols": {
-					"fallback": "♫",
-					"play":     "⏵",
-					"pause":    "⏸",
-					"stop":     "⏹"
-				}
-			}
-		},
 		"powerline.segments.common.bat.battery": {
 			"args": {
 				"full_heart": "💙",
-				"empty_heart": "💛"
+				"empty_heart": "💛",
+				"online": "⚡️",
+				"offline": " "
 			}
 		},
 		"powerline.segments.common.sys.uptime": {
@@ -150,6 +145,15 @@
 		"powerline.segments.vim.modified_indicator": {
 			"args": {
 				"text": "🖫⃥"
+			}
+		},
+
+		"powerline.segments.i3wm.scratchpad": {
+			"args": {
+				"icons": {
+					"fresh": "●",
+					"changed": "○"
+				}
 			}
 		}
 	}
