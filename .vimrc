@@ -7,6 +7,7 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 " Plugins --------------------------------------- {{{1
+
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'ujihisa/unite-colorscheme'
@@ -25,16 +26,6 @@ call plug#end()
 colorscheme solarized
 set background=dark
 
-" powerline
-if system('command -v powerline-daemon') != ''
-    let g:powerline_pycmd="python3"
-    let g:powerline_pyeval="py3eval"
-    python3 from powerline.vim import setup as powerline_setup
-    python3 powerline_setup()
-    python3 del powerline_setup
-endif
-
-
 " Local dirs
 set backupdir=~/.vimtmp
 set directory=~/.vimtmp
@@ -45,12 +36,11 @@ set path+=**
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
+set belloff=all " Disable error bells
 set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
-set esckeys " Allow cursor keys in insert mode.
-"set nofoldenable " Disable code folding
 set foldmethod=marker
 set formatoptions=
 set formatoptions+=c " Format comments
@@ -68,13 +58,8 @@ set hlsearch " Highlight searches
 set ignorecase " Ignore case of searches.
 set incsearch " Highlight dynamically as pattern is typed.
 set laststatus=2 " Always show status line
-set lispwords+=defroutes " Compojure
-set lispwords+=defpartial,defpage " Noir core
-set lispwords+=defaction,deffilter,defview,defsection " Ciste core
-set lispwords+=describe,it " Speclj TDD/BDD
 set magic " Enable extended regexes.
 set mouse=a " Enable mouse in all modes.
-set noerrorbells " Disable error bells.
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
 set nostartofline " Don't reset cursor to start of line when moving around.
 set nowrap " Do not wrap lines.
@@ -88,7 +73,6 @@ set showmode " Show the current mode.
 set showtabline=2 " Always show tab bar.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
-set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
 set splitbelow " New window goes below
 set splitright " New windows goes right
 set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
@@ -96,7 +80,6 @@ set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set ttymouse=xterm " Set mouse type to xterm.
 set undofile " Persistent Undo.
-set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
 set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
@@ -108,8 +91,6 @@ set wrapscan " Searches wrap around end of file
 " Word wrap, don't wrap in the middle of a word
 set wrap
 set lbr
-
-let g:Powerline_symbols = 'fancy'
 
 " Key bindings ---------------------------------- {{{1
 " Change mapleader
@@ -229,9 +210,6 @@ au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 " Common Ruby files
 au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
-" Nu
-au BufNewFile,BufRead *.nu,*.nujson,Nukefile setf nu
-
 " Coffee Folding
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
@@ -240,6 +218,16 @@ au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
 
 
 " Plugin configuration -------------------------- {{{1
+
+" powerline
+if system('command -v powerline-daemon') != ''
+    let g:powerline_pycmd="python3"
+    let g:powerline_pyeval="py3eval"
+    let g:Powerline_symbols = 'fancy'
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 
 " NERDTree-like netrw
 let g:netrw_banner=0
