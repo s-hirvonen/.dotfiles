@@ -1,15 +1,18 @@
 " Initialization -------------------------------- {{{1
 set nocompatible
 filetype plugin indent on
+set t_Co=256
+syntax on
 
 call plug#begin('~/.vim/plugged')
 
+" Plugins --------------------------------------- {{{1
 " Colorschemes
 Plug 'altercation/vim-colors-solarized'
-
-" Plugins
-Plug 'shougo/Unite.Vim'
 Plug 'ujihisa/unite-colorscheme'
+
+" The rest
+Plug 'shougo/Unite.Vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
@@ -19,8 +22,6 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 call plug#end()
 
 " Colors & UI ----------------------------------- {{{1
-set t_Co=256
-syntax on
 colorscheme solarized
 set background=dark
 
@@ -119,6 +120,13 @@ let maplocalleader=","
 nnoremap ö :
 nnoremap Ö :
 nnoremap ; :
+vnoremap ö :
+vnoremap Ö :
+vnoremap ; :
+
+" Switch buffers with gb and gB
+nnoremap gb :bnext<CR>
+nnoremap gB :bprev<CR>
 
 " Exit to normal mode with jj
 imap jj <ESC>
@@ -172,11 +180,6 @@ inoremap <Right> <NOP>
 " Paste toggle (,p)
 set pastetoggle=<leader>p
 map <leader>p :set invpaste paste?<CR>
-
-" NERD Commenter
-let NERDSpaceDelims=1
-let NERDCompactSexyComs=1
-let g:NERDCustomDelimiters = { 'racket': { 'left': ';', 'leftAlt': '#|', 'rightAlt': '|#' } }
 
 " Buffer navigation (,,) (,]) (,[) (,ls)
 map <Leader>, <C-^>
