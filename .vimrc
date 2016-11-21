@@ -13,6 +13,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ujihisa/unite-colorscheme'
 
 " The rest
+Plug 'SirVer/ultisnips'
 Plug 'shougo/Unite.Vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
