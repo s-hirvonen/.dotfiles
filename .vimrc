@@ -20,6 +20,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'editorconfig/editorconfig-vim'
+Plug 'vim-scripts/Vimchant'
 
 call plug#end()
 
@@ -135,10 +137,6 @@ map <C-L> <C-W>l
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
 
-" Remap :W to :w
-command W w
-command Wq wq
-
 " Better mark jumping (line + col)
 nnoremap ' `
 
@@ -205,9 +203,6 @@ au BufReadPost,BufNewFile * set relativenumber
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
-" Jade
-au BufRead,BufNewFile *.jade set ft=jade syntax=jade
-
 " Common Ruby files
 au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 
@@ -216,7 +211,6 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 " ZSH
 au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
-
 
 " Plugin configuration -------------------------- {{{1
 
@@ -232,11 +226,11 @@ endif
 
 " NERDTree-like netrw
 let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4 " 1: new h-split 2: new v-split 3: new tab 4: prev. window
+let g:netrw_altfile=1 " C-^ (also bound to ,,) ignores netrw and returns to previous actual buffer
 let g:netrw_altv=1
 let g:netrw_winsize=25
-map <Leader>n :Vexplore<CR>
+let g:netrw_browse_split=4 " 0: same window 1: split 2: vsplit 3: new tab 4: prev. window
+map <Leader>n :Vexplore .<CR>
 
 " vim-latex
 let g:vimtex_latexmk_build_dir='build'
@@ -273,3 +267,4 @@ endif
 
 " Vimchant: Finnish spell checking
 let g:vimchant_spellcheck_lang = 'fi'
+set updatetime=1000 " time to write the swap file to disk, also vimchant update interval
