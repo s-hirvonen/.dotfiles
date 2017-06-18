@@ -1,5 +1,4 @@
 " Initialization -------------------------------- {{{1
-set nocompatible
 filetype plugin indent on
 set t_Co=256
 syntax on
@@ -22,6 +21,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-scripts/Vimchant'
+Plug 'vim-scripts/netrw.vim'
 
 call plug#end()
 
@@ -60,6 +60,7 @@ set history=1000 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
 set ignorecase " Ignore case of searches.
 set incsearch " Highlight dynamically as pattern is typed.
+set infercase " When doing keyword completion in insert mode, case is adjusted depending on the typed text
 set laststatus=2 " Always show status line
 set magic " Enable extended regexes.
 set mouse=a " Enable mouse in all modes.
@@ -187,6 +188,10 @@ map <PageUp> <C-U>
 map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
+
+" Shift+Space to show omnicomplete list
+inoremap <C-O> <C-X><C-O>
+
 
 " Restore cursor position
 autocmd BufReadPost *
