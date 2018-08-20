@@ -13,7 +13,6 @@ Plug 'ujihisa/unite-colorscheme'
 
 " The rest
 Plug 'SirVer/ultisnips'
-Plug 'shougo/Unite.Vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
@@ -22,6 +21,10 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-scripts/Vimchant'
 Plug 'vim-scripts/netrw.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'wavded/vim-stylus'
+Plug 'adamclerk/vim-razor'
 
 call plug#end()
 
@@ -159,8 +162,8 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
 " Paste toggle (,p)
-set pastetoggle=<leader>p
-map <leader>p :set invpaste paste?<CR>
+set pastetoggle=<leader>P
+map <leader>P :set invpaste paste?<CR>
 
 " Buffer navigation (,,) (,]) (,[) (,ls)
 map <Leader>, <C-^>
@@ -247,29 +250,19 @@ map <Leader>gst :Gstatus<CR>
 map <Leader>gc :Gcommit<CR>
 map <Leader>gd :Gdiff<CR>
 
-" Emmet
-let g:user_emmet_leader_key='<s-tab>'
-
-" Unite.vim
-nnoremap <C-g> :Unite grep:.<cr>
-nnoremap <C-b> :Unite -quick-match buffer<cr>
-nnoremap <C-p> :Unite file_rec/async<cr>
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
-call unite#custom#profile('default', 'context', {
-\   'start_insert': 1,
-\   'direction': 'botright',
-\ })
-
-call unite#custom#source('buffer,file,file_rec,file_rec/async', 'sorters', 'sorter_selecta')
-
-if executable('ag')
-        " use ag in Unite.vim
-        let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
-        let g:unite_source_grep_command = 'ag'
-        let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'    
-endif
-
 " Vimchant: Finnish spell checking
-let g:vimchant_spellcheck_lang = 'fi'
-set updatetime=1000 " time to write the swap file to disk, also vimchant update interval
+"let g:vimchant_spellcheck_lang = 'fi'
+"set updatetime=1000 " time to write the swap file to disk, also vimchant update interval
+
+" fzf.vim
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
+nnoremap <Leader>f :GFiles<CR>
+nnoremap <C-f> :GFiles<CR>
+nnoremap <Leader>g :GGrep<CR>
+nnoremap <C-g> :GGrep<CR>
