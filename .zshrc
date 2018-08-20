@@ -61,7 +61,19 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export LANG=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export POWERLINE_PATH=$(pip show powerline-status | grep Location | awk '{print $2}')
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# ag - the silver searcher
+alias ag='ag --path-to-ignore ~/.ignore'
+
+# Editor for git and other stuff
+export VISUAL=vim
+export EDITOR="$VISUAL"
