@@ -16,7 +16,8 @@ set nohlsearch
 set hidden
 set noerrorbells
 set expandtab
-set tabstop=4 softtabstop=4
+set tabstop=4 
+set softtabstop=4
 set nowrap
 set ignorecase
 set smartcase
@@ -38,6 +39,4 @@ let mapleader=" "
 
 inoremap jj <ESC>
 nnoremap <leader>w :w<Enter>
-
-
 
