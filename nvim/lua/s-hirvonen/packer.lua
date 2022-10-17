@@ -6,6 +6,12 @@ return require("packer").startup(function()
     use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
 
+    -- Statusline
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    })
+
     -- Treesitter
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
