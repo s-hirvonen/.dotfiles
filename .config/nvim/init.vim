@@ -3,10 +3,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'gruvbox-community/gruvbox'
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 
-colorscheme gruvbox
+colorscheme tokyonight
 
 set exrc
 set guicursor=
