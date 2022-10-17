@@ -1,6 +1,5 @@
 " Initialization -------------------------------- {{{1
 filetype plugin indent on
-set t_Co=256
 syntax on
 
 call plug#begin('~/.vim/plugged')
@@ -29,7 +28,6 @@ Plug 'adamclerk/vim-razor'
 call plug#end()
 
 " Colors & UI ----------------------------------- {{{1
-colorscheme solarized
 set background=dark
 
 " Local dirs
