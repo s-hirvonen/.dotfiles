@@ -1,6 +1,5 @@
 return require("packer").startup(function()
     use("wbthomason/packer.nvim")
-    use("nvim-telescope/telescope.nvim")
 
     -- Colorscheme section
     use("gruvbox-community/gruvbox")
@@ -16,4 +15,14 @@ return require("packer").startup(function()
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
+
+    -- Telescope
+    use ('nvim-lua/plenary.nvim')
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    
+    -- LSP
+    use { 'neovim/nvim-lspconfig' }
 end)

@@ -100,6 +100,11 @@ _G.packer_plugins = {
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/telescope.nvim",
