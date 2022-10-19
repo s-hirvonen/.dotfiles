@@ -10,6 +10,7 @@ return require("packer").startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     })
+    use({ "akinsho/nvim-bufferline.lua", after = 'tokyonight.nvim' })
 
     -- Treesitter
     use("nvim-treesitter/nvim-treesitter", {

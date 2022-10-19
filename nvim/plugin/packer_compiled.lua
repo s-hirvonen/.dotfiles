@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -118,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-bufferline.lua"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
+    url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
     loaded = true,
