@@ -1,4 +1,4 @@
-return require("packer").startup(function()
+return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
 
     -- Colorscheme section
@@ -17,12 +17,15 @@ return require("packer").startup(function()
     })
 
     -- Telescope
-    use ('nvim-lua/plenary.nvim')
+    use('nvim-lua/plenary.nvim')
     use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
-      requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    
+
     -- LSP
     use { 'neovim/nvim-lspconfig' }
+
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
 end)
