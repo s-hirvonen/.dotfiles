@@ -1,1 +1,1 @@
-require('s-hirvonen')
+require('shirvonen')
