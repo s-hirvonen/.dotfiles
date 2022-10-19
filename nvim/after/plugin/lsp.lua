@@ -1,21 +1,21 @@
 local Remap = require("shirvonen.keymap")
 local nnoremap = Remap.nnoremap
-local inoremap = Remap.inoremap
+-- local inoremap = Remap.inoremap
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
 -- local protocol = require('vim.lsp.protocol')
 local keymap = function()
-    nnoremap('K', vim.lsp.buf.hover)
-    nnoremap('gd', vim.lsp.buf.definition)
+    --     nnoremap('K', vim.lsp.buf.hover)
+    --     nnoremap('gd', vim.lsp.buf.definition)
     nnoremap('gt', vim.lsp.buf.type_definition)
     nnoremap('gi', vim.lsp.buf.implementation)
-    nnoremap('[d', vim.diagnostic.goto_next)
-    nnoremap(']d', vim.diagnostic.goto_prev)
+    --     nnoremap('[d', vim.diagnostic.goto_next)
+    --     nnoremap(']d', vim.diagnostic.goto_prev)
     nnoremap('<leader>dl', "<cmd>Telescope diagnostics<cr>")
-    inoremap('<C-h>', vim.lsp.buf.signature_help)
-
-    nnoremap('<leader>vca', vim.lsp.buf.code_action)
+    --     inoremap('<C-h>', vim.lsp.buf.signature_help)
+    --
+    -- nnoremap('<leader>vca', vim.lsp.buf.code_action)
 end
 
 -- Set up lspconfig.
