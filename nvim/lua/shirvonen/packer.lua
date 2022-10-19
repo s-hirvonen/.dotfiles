@@ -32,4 +32,14 @@ return require("packer").startup(function(use)
 
     -- Editorconfig
     use('gpanders/editorconfig.nvim')
+
+    -- Autocomplete
+    use('hrsh7th/nvim-cmp')
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+
+    -- snip
+    use('L3MON4D3/LuaSnip')
+    use('saadparwaiz1/cmp_luasnip')
 end)

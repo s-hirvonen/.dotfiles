@@ -18,6 +18,9 @@ local keymap = function()
     nnoremap('<leader>vca', vim.lsp.buf.code_action)
 end
 
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local on_attach = function(client)
     -- formatting
     if client.server_capabilities.documentFormattingProvider then
@@ -36,12 +39,14 @@ end
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     dmc = { "typescript-language-server", "--stdio" }
 }
 
 nvim_lsp.sumneko_lua.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         Lua = {
             diagnostics = {
