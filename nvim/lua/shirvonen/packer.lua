@@ -26,6 +26,10 @@ return require("packer").startup(function(use)
     -- LSP
     use { 'neovim/nvim-lspconfig' }
 
+    -- Prettier
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+
+    -- Editorconfig
+    use('gpanders/editorconfig.nvim')
 end)

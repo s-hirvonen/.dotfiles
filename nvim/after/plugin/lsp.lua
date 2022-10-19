@@ -1,20 +1,37 @@
+local Remap = require("shirvonen.keymap")
+local nnoremap = Remap.nnoremap
+local inoremap = Remap.inoremap
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
 -- local protocol = require('vim.lsp.protocol')
+local keymap = function()
+    nnoremap('K', vim.lsp.buf.hover)
+    nnoremap('gd', vim.lsp.buf.definition)
+    nnoremap('gt', vim.lsp.buf.type_definition)
+    nnoremap('gi', vim.lsp.buf.implementation)
+    nnoremap('[d', vim.diagnostic.goto_next)
+    nnoremap(']d', vim.diagnostic.goto_prev)
+    nnoremap('<leader>dl', "<cmd>Telescope diagnostics<cr>")
+    inoremap('<C-h>', vim.lsp.buf.signature_help)
 
-local on_attach = function(client, bufnr)
+    nnoremap('<leader>vca', vim.lsp.buf.code_action)
+end
+
+local on_attach = function(client)
     -- formatting
     if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]
-        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
         vim.api.nvim_command [[augroup END]]
     end
 
     if client.server_capabilities.documentRangeFormattingProvider then
         vim.cmd("xnoremap <silent><buffer> <leader>f :lua vim.lsp.buf.range_formatting({})<cr>")
     end
+
+    keymap()
 end
 
 nvim_lsp.tsserver.setup {
