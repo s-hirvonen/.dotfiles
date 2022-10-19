@@ -26,7 +26,7 @@ return require("packer").startup(function(use)
     -- LSP
     use { 'neovim/nvim-lspconfig' }
 
-    -- Prettier
+    -- Typescript
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
 
@@ -42,4 +42,5 @@ return require("packer").startup(function(use)
     -- snip
     use('L3MON4D3/LuaSnip')
     use('saadparwaiz1/cmp_luasnip')
+
 end)
