@@ -1,4 +1,4 @@
-vim.g.shirvonen_colorscheme = "tokyonight-moon"
+vim.g.shirvonen_colorscheme = "tokyonight"
 
 local function Color()
     vim.g.tokyonight_transparent = false

@@ -63,3 +63,5 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
+
+nvim_lsp.phpactor.setup {}
