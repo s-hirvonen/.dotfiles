@@ -10,7 +10,7 @@ return require("packer").startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     })
-    use({ "akinsho/nvim-bufferline.lua", after = 'tokyonight.nvim' })
+    use({ "akinsho/nvim-bufferline.lua" })
 
     -- Treesitter
     use("nvim-treesitter/nvim-treesitter", {
@@ -32,6 +32,9 @@ return require("packer").startup(function(use)
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
 
+    -- PHP
+    use('stephpy/vim-php-cs-fixer')
+
     -- Editorconfig
     use('gpanders/editorconfig.nvim')
 
@@ -44,5 +47,8 @@ return require("packer").startup(function(use)
     -- snip
     use('L3MON4D3/LuaSnip')
     use('saadparwaiz1/cmp_luasnip')
+
+    -- git
+    use('lewis6991/gitsigns.nvim')
 
 end)

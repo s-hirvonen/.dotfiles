@@ -1,5 +1,6 @@
 local Remap = require("shirvonen.keymap")
 local nnoremap = Remap.nnoremap
+local inoremap = Remap.inoremap
 -- local inoremap = Remap.inoremap
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
@@ -13,7 +14,7 @@ local keymap = function()
     --     nnoremap('[d', vim.diagnostic.goto_next)
     --     nnoremap(']d', vim.diagnostic.goto_prev)
     nnoremap('<leader>dl', "<cmd>Telescope diagnostics<cr>")
-    --     inoremap('<C-h>', vim.lsp.buf.signature_help)
+    inoremap('<C-h>', vim.lsp.buf.signature_help)
     --
     -- nnoremap('<leader>vca', vim.lsp.buf.code_action)
 end
