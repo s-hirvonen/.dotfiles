@@ -15,8 +15,6 @@ local keymap = function()
     --     nnoremap(']d', vim.diagnostic.goto_prev)
     nnoremap('<leader>dl', "<cmd>Telescope diagnostics<cr>")
     inoremap('<C-h>', vim.lsp.buf.signature_help)
-    --
-    -- nnoremap('<leader>vca', vim.lsp.buf.code_action)
 end
 
 -- Set up lspconfig.
