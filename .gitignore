@@ -5,3 +5,6 @@
 .vim/undo
 .config/enchant
 .config/htop
+fish/completions
+fish/functions
+fish/fish_variables
