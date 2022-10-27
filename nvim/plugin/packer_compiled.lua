@@ -179,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-php-cs-fixer"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/vim-php-cs-fixer",
+    url = "https://github.com/stephpy/vim-php-cs-fixer"
   }
 }
 
