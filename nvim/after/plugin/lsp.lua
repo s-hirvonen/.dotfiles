@@ -1,7 +1,6 @@
 local Remap = require("shirvonen.keymap")
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
--- local inoremap = Remap.inoremap
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
@@ -14,8 +13,17 @@ local keymap = function()
     --     nnoremap('[d', vim.diagnostic.goto_next)
     --     nnoremap(']d', vim.diagnostic.goto_prev)
     nnoremap('<leader>dl', "<cmd>Telescope diagnostics<cr>")
-    inoremap('<C-h>', vim.lsp.buf.signature_help)
+    inoremap('<C-j>', vim.lsp.buf.signature_help)
 end
+
+local null_ls = require('null-ls')
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.hover.printenv
+    }
+})
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -41,11 +49,6 @@ nvim_lsp.tsserver.setup {
     capabilities = capabilities,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     dmc = { "typescript-language-server", "--stdio" }
-}
-
-nvim_lsp.eslint.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
 }
 
 nvim_lsp.sumneko_lua.setup {

@@ -1,4 +1,9 @@
-require('prettier').setup({
+local ok, prettier = pcall(require, 'prettier')
+if not ok then
+    return
+end
+
+prettier.setup({
     bin = 'prettier',
     filetypes = {
         "css",

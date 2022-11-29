@@ -24,13 +24,16 @@ return require("packer").startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    -- Autopairs
+    use('windwp/nvim-autopairs')
+
     -- LSP
     use { 'neovim/nvim-lspconfig' }
     use { 'glepnir/lspsaga.nvim' }
 
     -- Typescript
     use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
+    -- use('MunifTanjim/prettier.nvim')
 
     -- PHP
     use('stephpy/vim-php-cs-fixer')
