@@ -7,5 +7,6 @@ if status is-interactive
     set --universal nvm_default_packages yarn vscode-langservers-extracted typescript-language-server
 
     # oh-my-posh init fish | source
-    eval "$(oh-my-posh init fish --config $(brew --prefix oh-my-posh)/themes/powerlevel10k_rainbow.omp.json)"
+    # eval "$(oh-my-posh init fish --config $(brew --prefix oh-my-posh)/themes/powerlevel10k_rainbow.omp.json)"
+    eval "$(oh-my-posh init fish --config ~/.dotfiles/fish/themes/my.omp.json)"
 end
