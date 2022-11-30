@@ -67,3 +67,14 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 nvim_lsp.phpactor.setup {}
+
+nvim_lsp.fsautocomplete.setup {
+    on_attach = function()
+        vim.lsp.codelens.refresh()
+        vim.api.nvim_command [[augroup Codelens]]
+        vim.api.nvim_command [[autocmd! * <buffer>]]
+        vim.api.nvim_command [[autocmd BufEnter <buffer> lua vim.lsp.codelens.refresh()]]
+        vim.api.nvim_command [[autocmd TextChanged <buffer> lua vim.lsp.codelens.refresh()]]
+        vim.api.nvim_command [[augroup END]]
+    end
+}
