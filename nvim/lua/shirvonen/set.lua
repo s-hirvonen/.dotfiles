@@ -32,3 +32,7 @@ vim.opt.colorcolumn = "120"
 vim.opt.splitright = true
 
 vim.g.mapleader = " "
+
+vim.g["fsharp#lsp_auto_setup"] = 0
+vim.g["fsharp#fsautocomplete_command"] = { 'fsautocomplete' }
+vim.g["fsharp#enable_reference_code_lens"] = 0

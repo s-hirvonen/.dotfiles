@@ -9,6 +9,9 @@ nnoremap('<C-b>', tele.buffers)
 -- open files in .dotfiles repo
 nnoremap('<leader>df', function() tele.git_files({ cwd = '~/.dotfiles' }) end)
 
+-- Keybinds list
+nnoremap('<leader>dk', function() tele.keymaps() end)
+
 -- git commands
 nnoremap('<leader>gst', tele.git_status)
 nnoremap('<leader>glog', tele.git_commits)

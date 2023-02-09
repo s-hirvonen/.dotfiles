@@ -3,5 +3,8 @@
     "Lua.diagnostics.globals": [
         "vim",
         "require"
+    ],
+    "workspace.library": [
+        "${3rd}/luassert/library"
     ]
 }

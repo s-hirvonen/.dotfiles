@@ -3,8 +3,9 @@ if status is-interactive
     source ~/.config/fish/aliases.fish
     source ~/.secrets
 
-    set --universal nvm_default_version v16.14.2
-    set --universal nvm_default_packages yarn vscode-langservers-extracted typescript-language-server
+    set --universal nvm_default_version hydrogen
+    set --universal nvm_default_packages yarn prettier vscode-langservers-extracted typescript-language-server @fsouza/prettierd eslint_d eslint-language-server typescript
+    nvm use $nvm_default_version
 
     # PATH
     fish_add_path ~/.dotnet/tools

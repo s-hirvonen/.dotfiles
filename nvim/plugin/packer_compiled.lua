@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Ionide-vim"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/Ionide-vim",
+    url = "https://github.com/ionide/Ionide-vim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -99,11 +104,6 @@ _G.packer_plugins = {
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["editorconfig.nvim"] = {
-    loaded = true,
-    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
-    url = "https://github.com/gpanders/editorconfig.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -113,6 +113,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/Users/samuli.hirvonen/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,

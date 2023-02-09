@@ -20,3 +20,7 @@ nnoremap("<C-k>", "<C-w><C-k>")
 nnoremap("<C-l>", "<C-w><C-l>")
 
 inoremap("jj", "<esc>")
+
+-- <space>y to copy to system clipboard
+vnoremap("<leader>y", "\"+y")
+nnoremap("<leader>y", "\"+y")

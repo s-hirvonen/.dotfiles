@@ -1,4 +1,5 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
@@ -20,11 +21,15 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol_text'
+        })
+    },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'luasnip' }, -- For luasnip users.
-    }, {
-        { name = 'buffer' },
+        { name = 'luasnip' },
+        { name = 'nvim_lsp_signature_help' }
     })
 })
 

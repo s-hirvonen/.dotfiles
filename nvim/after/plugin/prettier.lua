@@ -4,7 +4,7 @@ if not ok then
 end
 
 prettier.setup({
-    bin = 'prettier',
+    bin = 'prettierd',
     filetypes = {
         "css",
         "html",
