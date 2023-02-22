@@ -14,3 +14,8 @@ if status is-interactive
     # eval "$(oh-my-posh init fish --config $(brew --prefix oh-my-posh)/themes/powerlevel10k_rainbow.omp.json)"
     eval "$(oh-my-posh init fish --config ~/.dotfiles/fish/themes/my.omp.json)"
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/samuli.hirvonen/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
