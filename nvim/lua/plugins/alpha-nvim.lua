@@ -19,7 +19,7 @@ return {
       button.opts.hl_shortcut = "AlphaShortcut"
     end
     dashboard.section.footer.opts.hl = "Type"
-    dashboard.section.header.opts.hl = "AlphaHeader"
+    dashboard.section.header.opts.hl = "AlphaShortcut"
     dashboard.section.buttons.opts.hl = "AlphaButtons"
 
     local width = 46
@@ -29,12 +29,12 @@ return {
     dashboard.section.terminal.height = height
     dashboard.section.terminal.opts.redraw = true
 
-    dashboard.section.header.val = "𝕟 𝕖 𝕠 𝕧 𝕚 𝕞"
+    dashboard.section.header.val = "  𝕟 𝕖 𝕠 𝕧 𝕚 𝕞  "
 
     dashboard.config.layout = {
       { type = "padding", val = 1 },
       dashboard.section.terminal,
-      { type = "padding", val = height + 4 },
+      { type = "padding", val = height + 5 },
       dashboard.section.header,
       { type = "padding", val = 2 },
       dashboard.section.buttons,
