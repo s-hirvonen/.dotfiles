@@ -3,7 +3,7 @@ if status is-interactive
     source ~/.config/fish/aliases.fish
     source ~/.secrets
 
-    set --universal nvm_default_version hydrogen
+    set --universal nvm_default_version latest
     set --universal nvm_default_packages yarn prettier vscode-langservers-extracted typescript-language-server @fsouza/prettierd eslint_d eslint-language-server typescript
     nvm use $nvm_default_version
 
