@@ -1,49 +1,48 @@
 #!/bin/bash
 
-# Install submodules
-git submodule init
-git submodule update
-
-if [[ "$OSTYPE" == "darwin"* ]]
-then 
-        osx
-fi
-
 function osx() {
-        # Check for Homebrew install,
-        # install if not found
-        if test ! $(which brew); then
-                echo "Installing homebrew..."
-                ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        fi
+  # Check for Homebrew install,
+  # install if not found
+  if test ! $(which brew); then
+    echo "Installing homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
 
-        # Install dotfile dependencies and other userful things
-        brew update
-        brew tap iveney/mocha # has realpath
-        brew install coreutils
-        brew install findutils
-        brew install realpath
-        brew install python
+  # Install dotfile dependencies and other userful things
+  brew update
+  brew tap iveney/mocha # has realpath
+  brew install realpath
+	brew install neovim
+	brew install tmux
+	brew install fish
+  brew install lazygit
+  brew install node
+  brew install nvm
+  brew install jandedobbeleer/oh-my-posh/oh-my-posh
+
+  # Fish
+  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 }
 
 function doIt() {
-	for SOURCE in .oh-my-zsh .zshrc .vimrc .vim .tmux.conf .config
+	mkdir -p ~/.config
+	mkdir -p ~/.nvm
+  touch ~/.secrets
+	for SOURCE in nvim fish
 	do
-		ln -hfis "$(realpath $SOURCE)" ~
+		ln -hfis "$(realpath $SOURCE)" ~/.config
 	done
+  ln -hfis "$(realpath tmux/.tmux)" ~
+  ln -hfis "$(realpath tmux/.tmux.conf)" ~
 	unset SOURCE
-
-        # create directory for VIM swap, history, undo etc.
-        mkdir -p ~/.vimtmp
 }
 
+if [[ "$OSTYPE" == "darwin"* ]]
+then 
+  osx
+fi
+
 doIt
-
-# Install Powerline
-pip install git+git://github.com/Lokaltog/powerline
-
-# Change shell to zsh
-chsh -s /bin/zsh
 
 unset doIt
 unset osx
