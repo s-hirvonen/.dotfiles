@@ -1,8 +1,5 @@
 .DS_Store
-.vim/.netrwhist
 .config/configstore
-.vim/plugged
-.vim/undo
 .config/enchant
 .config/htop
 fish/completions
