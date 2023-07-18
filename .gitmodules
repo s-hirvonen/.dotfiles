@@ -1,9 +1,3 @@
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "osx/powerline-fonts"]
-	path = osx/powerline-fonts
-	url = https://github.com/powerline/fonts.git
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
