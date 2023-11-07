@@ -6,3 +6,4 @@ fish/completions
 fish/functions
 fish/fish_variables
 fish/conf.d
+nvim-lazy-lock.json
