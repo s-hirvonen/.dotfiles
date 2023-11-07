@@ -16,6 +16,14 @@ if status is-interactive
 end
 
 # pnpm
-set -gx PNPM_HOME "/Users/samuli.hirvonen/Library/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
+set -gx PNPM_HOME /Users/samulihirvonen/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+
+fish_add_path /Users/samulihirvonen/Library/pnpm
 # pnpm end
+
+# .NET
+set --universal DOTNET_ROOT $HOME/dotnet
+fish_add_path /Users/samulihirvonen/dotnet
