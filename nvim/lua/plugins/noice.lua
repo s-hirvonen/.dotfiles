@@ -6,5 +6,8 @@ return {
         enabled = false,
       },
     },
+    presets = {
+      lsp_doc_border = true,
+    },
   },
 }

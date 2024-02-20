@@ -27,3 +27,6 @@ fish_add_path /Users/samulihirvonen/Library/pnpm
 # .NET
 set --universal DOTNET_ROOT $HOME/dotnet
 fish_add_path /Users/samulihirvonen/dotnet
+
+# Rust
+fish_add_path /Users/samulihirvonen/.cargo/bin
