@@ -4,4 +4,5 @@ return {
   { "echasnovski/mini.indentscope", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = false },
   { "echasnovski/mini.pairs", enabled = false },
+  { "nvimdev/dashboard-nvim", enabled = false },
 }
