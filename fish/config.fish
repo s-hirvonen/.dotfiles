@@ -15,20 +15,23 @@ if status is-interactive
     eval "$(oh-my-posh init fish --config ~/.dotfiles/fish/themes/my.omp.json)"
 end
 
+# homebrew
+fish_add_path /opt/homebrew/bin
+
 # pnpm
 set -gx PNPM_HOME /Users/shirvonen/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 
-fish_add_path /Users/samulihirvonen/Library/pnpm
+fish_add_path /Users/shirvonen/Library/pnpm
 # pnpm end
 
 # .NET
 set --universal DOTNET_ROOT $HOME/dotnet
-fish_add_path /Users/samulihirvonen/dotnet
+fish_add_path /Users/shirvonen/dotnet
 
 # Rust
-fish_add_path /Users/samulihirvonen/.cargo/bin
+fish_add_path /Users/shirvonen/.cargo/bin
 
 set --universal LOCAL_CHROMIUM_PATH "/Users/shirvonen/chrome/mac_arm-126.0.6478.61/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
